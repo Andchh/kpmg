@@ -40,3 +40,30 @@ A API irá fornecer 4 endpoints que são:
 
 2. Docker
 ----------------------------------------------
+
+-Baixe o arquivo kmpgapi.tar
+
+-Com o terminal aberto na pasta do arquivo execute:
+       docker load -i <nome ou caminho do arquivo kpmgapi.tar>
+
+## Documentação
+-----------------------------------------------------
+Após executar de alguma das duas formas disponíveis você poderá acessar o ip:
+       127.0.0.1:5000
+Nele haverá uma página html com informações dos endpoints disponíveis.
+
+## Resultados
+
+Você pode obter resultados através do método request.
+
+- Crie um script python ou abra um jupyter notebook local
+- Atribua o login e senha a variáveis:
+       user = 'admin'
+       passw = '123'
+- Faça o request como o exemplo a seguir:
+       r = requests.get('http://127.0.0.1:5000/mediacarrosvalor', auth=(user, passw))
+       print(r.text)
+-Você deverá receber um json com a resposta que pode ser usado como quiser.
+       
+
+       
