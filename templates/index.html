@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to KPMG Test’s documentation! &#8212; documentação KPMG Test 1.0</title>
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/underscore.js"></script>
+    <script src="static/doctools.js"></script>
+    <script src="static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+   
+  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-kpmg-test-s-documentation">
+<h1>Welcome to KPMG Test’s documentation!<a class="headerlink" href="#welcome-to-kpmg-test-s-documentation" title="Link permanente para este título">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="module-handler">
+<span id="kpmgapi-main"></span><h1>KpmgApi main<a class="headerlink" href="#module-handler" title="Link permanente para este título">¶</a></h1>
+<dl class="py function">
+<dt id="handler.valor_medio_carro">
+<code class="sig-prename descclassname"><span class="pre">handler.</span></code><code class="sig-name descname"><span class="pre">valor_medio_carro</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#handler.valor_medio_carro" title="Link permanente para esta definição">¶</a></dt>
+<dd><p><strong>Valor médio por cidade</strong></p>
+<p>Esta função retorna o valor médio do carro em determinada
+cidade passada como parâmetro.</p>
+<ul>
+<li><p>Exemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://127.0.0.1:5000/mediacarroscidade?carro=C_01&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">passw</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p>Resultado Esperado no sucesso:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span> <span class="n">Status</span> <span class="n">Code</span><span class="p">:</span> <span class="mi">200</span>
+<span class="p">{</span>
+<span class="s2">&quot;city&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;0&quot;</span><span class="p">:</span><span class="s2">&quot;C_01&quot;</span>
+<span class="p">},</span>
+<span class="s2">&quot;car_value&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;0&quot;</span><span class="p">:</span><span class="mf">47869.2534246575</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt id="handler.valor_medio_cidades">
+<code class="sig-prename descclassname"><span class="pre">handler.</span></code><code class="sig-name descname"><span class="pre">valor_medio_cidades</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#handler.valor_medio_cidades" title="Link permanente para esta definição">¶</a></dt>
+<dd><p><strong>Valor médio das cidades</strong></p>
+<p>Essa função Pega o valor médio de todos os carros 
+agrupados por cidade.</p>
+<ul>
+<li><p>Exemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://127.0.0.1:5000/mediacidades&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">passw</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p>Resultado Esperado no sucesso:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span> <span class="n">Status</span> <span class="n">Code</span><span class="p">:</span> <span class="mi">200</span>
+<span class="p">{</span>
+<span class="s2">&quot;city&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;0&quot;</span><span class="p">:</span><span class="s2">&quot;C_01&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;1&quot;</span><span class="p">:</span><span class="s2">&quot;C_02&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;2&quot;</span><span class="p">:</span><span class="s2">&quot;C_03&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;3&quot;</span><span class="p">:</span><span class="s2">&quot;C_04&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;4&quot;</span><span class="p">:</span><span class="s2">&quot;C_05&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;5&quot;</span><span class="p">:</span><span class="s2">&quot;C_06&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;6&quot;</span><span class="p">:</span><span class="s2">&quot;C_07&quot;</span>
+<span class="p">},</span>
+<span class="s2">&quot;car_value&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;0&quot;</span><span class="p">:</span><span class="mf">47869.2534246575</span><span class="p">,</span>
+        <span class="s2">&quot;1&quot;</span><span class="p">:</span><span class="mf">46464.6746031746</span><span class="p">,</span>
+        <span class="s2">&quot;2&quot;</span><span class="p">:</span><span class="mf">47706.176056338</span><span class="p">,</span> 
+        <span class="s2">&quot;3&quot;</span><span class="p">:</span><span class="mf">47865.8732394366</span><span class="p">,</span>
+        <span class="s2">&quot;4&quot;</span><span class="p">:</span><span class="mf">48332.3834586466</span><span class="p">,</span>
+        <span class="s2">&quot;5&quot;</span><span class="p">:</span><span class="mf">47592.4201183432</span><span class="p">,</span>
+        <span class="s2">&quot;6&quot;</span><span class="p">:</span><span class="mf">48582.9366197183</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt id="handler.valor_medio_fabricante">
+<code class="sig-prename descclassname"><span class="pre">handler.</span></code><code class="sig-name descname"><span class="pre">valor_medio_fabricante</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#handler.valor_medio_fabricante" title="Link permanente para esta definição">¶</a></dt>
+<dd><p><strong>Valor médio do fabricante</strong></p>
+<p>Esta função retorna o valor médio do carro de um determinado fabricante
+passado como parâmetro no request.</p>
+<ul>
+<li><p>Exemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://127.0.0.1:5000/mediafabricante?fabricante=B&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">passw</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p>Resultado Esperado no sucesso:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span> <span class="n">Status</span> <span class="n">Code</span><span class="p">:</span> <span class="mi">200</span>
+
+<span class="p">{</span>
+<span class="s2">&quot;car_make&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;1&quot;</span><span class="p">:</span><span class="s2">&quot;B&quot;</span>
+<span class="p">},</span>
+<span class="s2">&quot;car_value&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;1&quot;</span><span class="p">:</span><span class="mf">50383.3846153846</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt id="handler.valor_medio_geral">
+<code class="sig-prename descclassname"><span class="pre">handler.</span></code><code class="sig-name descname"><span class="pre">valor_medio_geral</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#handler.valor_medio_geral" title="Link permanente para esta definição">¶</a></dt>
+<dd><p><strong>Valor médio dos carros</strong></p>
+<p>Esta função pega o valor médio de todos os carros 
+agrupados por fabricante.</p>
+<ul>
+<li><p>Exemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://127.0.0.1:5000/mediacarrosvalor&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">passw</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p>Resultado Esperado no sucesso:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span> <span class="n">Status</span> <span class="n">Code</span><span class="p">:</span> <span class="mi">200</span>
+
+<span class="p">{</span>
+        <span class="s2">&quot;car_make&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;0&quot;</span><span class="p">:</span><span class="s2">&quot;A&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;1&quot;</span><span class="p">:</span><span class="s2">&quot;B&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;2&quot;</span><span class="p">:</span><span class="s2">&quot;C&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;3&quot;</span><span class="p">:</span><span class="s2">&quot;D&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;4&quot;</span><span class="p">:</span><span class="s2">&quot;E&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;5&quot;</span><span class="p">:</span><span class="s2">&quot;F&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;6&quot;</span><span class="p">:</span><span class="s2">&quot;G&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;7&quot;</span><span class="p">:</span><span class="s2">&quot;H&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;8&quot;</span><span class="p">:</span><span class="s2">&quot;I&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;9&quot;</span><span class="p">:</span><span class="s2">&quot;J&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;car_value&quot;</span><span class="p">:{</span>
+                <span class="s2">&quot;0&quot;</span><span class="p">:</span><span class="mf">46144.9306930693</span><span class="p">,</span>
+                <span class="s2">&quot;1&quot;</span><span class="p">:</span><span class="mf">50383.3846153846</span><span class="p">,</span>
+                <span class="s2">&quot;2&quot;</span><span class="p">:</span><span class="mf">48890.2941176471</span><span class="p">,</span>
+                <span class="s2">&quot;3&quot;</span><span class="p">:</span><span class="mf">50650.4636363636</span><span class="p">,</span>
+                <span class="s2">&quot;4&quot;</span><span class="p">:</span><span class="mf">49621.3936170213</span><span class="p">,</span>
+                <span class="s2">&quot;5&quot;</span><span class="p">:</span><span class="mf">46137.6972477064</span><span class="p">,</span>
+                <span class="s2">&quot;6&quot;</span><span class="p">:</span><span class="mf">46113.3666666667</span><span class="p">,</span>
+                <span class="s2">&quot;7&quot;</span><span class="p">:</span><span class="mf">46126.3269230769</span><span class="p">,</span>
+                <span class="s2">&quot;8&quot;</span><span class="p">:</span><span class="mf">45487.5357142857</span><span class="p">,</span>
+                <span class="s2">&quot;9&quot;</span><span class="p">:</span><span class="mf">47992.9826086957</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">KPMG Test</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegação</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Busca rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Anderson Frazão.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
