@@ -81,5 +81,5 @@ Você pode obter resultados através do método request.
        
 - Você deverá receber um json com a resposta que pode ser usado como quiser.
        
-- Um arquivo do tipo jupyter notebook com os testes de request será disponibilizado como exemplo.
+- Um arquivo do tipo jupyter notebook de nome "Teste de API" com os testes de request será disponibilizado como exemplo.
        
