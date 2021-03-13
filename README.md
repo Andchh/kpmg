@@ -48,7 +48,9 @@ A API irá fornecer 4 endpoints que são:
 2.Docker
 ----------------------------------------------
 
-- Baixe o arquivo kmpgapi.tar
+- Baixe o arquivo kmpgapi.tar no link:
+       
+       https://drive.google.com/file/d/1EZ_fl_8ATZwHd0BINn3BQSFhkK5zABmv/view?usp=sharing
 
 - Com o terminal aberto na pasta do arquivo execute:
 
