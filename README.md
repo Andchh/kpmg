@@ -47,7 +47,10 @@ A API irá fornecer 4 endpoints que são:
 
 2.Docker
 ----------------------------------------------
-
+- Instale o docker em sua máquina através do link:
+      
+      https://docs.docker.com/get-docker/
+      
 - Baixe o arquivo kmpgapi.tar no link e salve em uma pasta de sua escolha:
        
        https://drive.google.com/file/d/1EZ_fl_8ATZwHd0BINn3BQSFhkK5zABmv/view?usp=sharing
@@ -56,6 +59,15 @@ A API irá fornecer 4 endpoints que são:
 
        docker load -i <nome ou caminho do arquivo kpmgapi.tar>
 
+- Após o comando você deverá ter uma imagem docker no seu sistema de nome "kpmgapi". Você pode chegar as imagens com o comando:
+
+       docker images
+       
+- Agora execute o docker com o comando:
+
+       docker run -p 5000:5000 kpmgapi 
+
+- Pronto, já deve estar tudo executando no seu terminal.
 ## Documentação
 -----------------------------------------------------
 - Após executar de alguma das duas formas disponíveis você poderá acessar o ip:
