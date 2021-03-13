@@ -12,7 +12,7 @@ df_means = df[['car_make', 'car_value']].groupby('car_make', as_index = False).m
 
 #instan flask
 app = Flask( __name__ )
-app.config['BASIC_AUTH_FORCE'] = True
+#app.config['BASIC_AUTH_FORCE'] = True
 app.config['BASIC_AUTH_USERNAME'] = 'admin'
 app.config['BASIC_AUTH_PASSWORD'] = '123'
 
@@ -74,6 +74,7 @@ def valor_medio_geral():
 
 #valor médio de um fabricante de carro passado como parametro no request
 @app.route('/mediafabricante', methods = ['GET'])
+@basic_auth.required
 def valor_medio_fabricante():
 	'''
 		**Valor médio do fabricante**
@@ -106,6 +107,7 @@ def valor_medio_fabricante():
 
 #valor médio de todos os carros baseados nas cidades correspondentes
 @app.route('/mediacidades', methods = ['GET'])
+@basic_auth.required
 def valor_medio_cidades():
 
 
@@ -147,6 +149,7 @@ def valor_medio_cidades():
 
 #valor médio dos carros de uma cidade passada como parametro no request
 @app.route('/mediacarroscidade', methods = ['GET'])
+@basic_auth.required
 def valor_medio_carro():
 	'''
 		**Valor médio por cidade**
@@ -178,6 +181,6 @@ def valor_medio_carro():
 
 if __name__ == '__main__':
 	#start flask
-	app.run( port = '5000')
+	app.run( host = '0.0.0.0', port = '5000')
 
 	
